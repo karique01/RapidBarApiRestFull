@@ -125,9 +125,11 @@
     <Compile Include="Services\BarService.cs" />
     <Compile Include="Services\BarTypeService.cs" />
     <Compile Include="Services\CreditCardService.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
     <Compile Include="Services\IBarService.cs" />
     <Compile Include="Services\IBarTypeService.cs" />
     <Compile Include="Services\ICreditCardService.cs" />
+    <Compile Include="Services\IEmployeeService.cs" />
     <Compile Include="Services\ILoginService.cs" />
     <Compile Include="Services\IOrderServcie.cs" />
     <Compile Include="Services\IProductService.cs" />

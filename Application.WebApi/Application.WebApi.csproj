@@ -130,10 +130,12 @@
     <Compile Include="Controllers\barsController.cs" />
     <Compile Include="Controllers\barTypesController.cs" />
     <Compile Include="Controllers\creditCardController.cs" />
+    <Compile Include="Controllers\employeeController.cs" />
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\orderController.cs" />
     <Compile Include="Controllers\productsByOrderController.cs" />
     <Compile Include="Controllers\productsController.cs" />
+    <Compile Include="Controllers\registerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

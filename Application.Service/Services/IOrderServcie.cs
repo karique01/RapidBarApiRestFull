@@ -13,7 +13,11 @@ namespace Application.Service.Services
         List<orden> getOrders(int idUser);
         List<orden> getOrdersByBar(int idBar);
         List<productDetail> getProductDetailsByOrder(int idBar);
+        List<productDetail> getProductDetailsByOrderDrinks(int idBar);
+        List<productDetail> getProductDetailsByOrderSnacks(int idBar);
         orders postOrder(orders order);
         void postProductByOrder(products_by_order value);
+        void eliminar(int orderId);
+        void deshacerEliminar(int orderId);
     }
 }

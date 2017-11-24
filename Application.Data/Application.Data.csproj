@@ -158,10 +158,13 @@
     <Compile Include="DTO\bar.cs" />
     <Compile Include="DTO\barType.cs" />
     <Compile Include="DTO\creditCard.cs" />
+    <Compile Include="DTO\employee.cs" />
+    <Compile Include="DTO\IUserType.cs" />
+    <Compile Include="DTO\manager.cs" />
     <Compile Include="DTO\orden.cs" />
     <Compile Include="DTO\product.cs" />
     <Compile Include="DTO\productDetail.cs" />
-    <Compile Include="DTO\Test.cs" />
+    <Compile Include="DTO\customer.cs" />
     <Compile Include="DTO\User.cs" />
     <Compile Include="DTO\UserLogin.cs" />
     <Compile Include="employees.cs">

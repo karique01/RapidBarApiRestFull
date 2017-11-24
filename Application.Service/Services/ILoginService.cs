@@ -1,4 +1,5 @@
-﻿using Application.Data.DTO;
+﻿using Application.Data;
+using Application.Data.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace Application.Service.Services
     interface ILoginService
     {
         User Login(UserLogin userLogin);
+        void register(users user);
     }
 }

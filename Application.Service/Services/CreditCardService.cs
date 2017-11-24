@@ -34,6 +34,11 @@ namespace Application.Service.Services
 
         public void saveCreditCard(credit_cards creditcard)
         {
+            //busco el customer
+            customers c = context.customers.FirstOrDefault(x => x.userId == creditcard.idCustomer);
+            if (c == null) return;
+
+            creditcard.idCustomer = c.id;
             context.credit_cards.Add(creditcard);
             context.SaveChanges();
         }

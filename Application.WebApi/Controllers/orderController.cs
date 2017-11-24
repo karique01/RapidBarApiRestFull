@@ -14,7 +14,6 @@ namespace Application.WebApi.Controllers
     public class orderController : ApiController
     {
         OrderService service = new OrderService();
-
         // GET: api/order
         [HttpGet]
         [Route("{userId}")]
@@ -29,20 +28,37 @@ namespace Application.WebApi.Controllers
         {
             return service.getProductDetailsByOrder(orderId);
         }
-
+        [HttpGet]
+        [Route("{orderId}/details/drinks")]
+        public IEnumerable<productDetail> GetProductDetailsDrinks(int orderId)
+        {
+            return service.getProductDetailsByOrderDrinks(orderId);
+        }
+        [HttpGet]
+        [Route("{orderId}/details/snacks")]
+        public IEnumerable<productDetail> GetProductDetailsSnacks(int orderId)
+        {
+            return service.getProductDetailsByOrderSnacks(orderId);
+        }
         public orders Post([FromBody]orders value)
         {
             return service.postOrder(value);
         }
 
         // PUT: api/order/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        [Route("{id}")]
+        public void Put(int id)
         {
+            service.deshacerEliminar(id);
         }
 
         // DELETE: api/order/5
+        [HttpDelete]
+        [Route("{id}")]
         public void Delete(int id)
         {
+            service.eliminar(id);
         }
     }
 }

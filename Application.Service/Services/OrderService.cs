@@ -10,6 +10,27 @@ namespace Application.Service.Services
     public class OrderService : IOrderServcie
     {
         rapidbarEntities context = new rapidbarEntities();
+
+        public void deshacerEliminar(int orderId)
+        {
+            orders order = context.orders.FirstOrDefault(x => x.id == orderId);
+            if (order != null)
+            {
+                order.state = true;
+                context.SaveChanges();
+            }
+        }
+
+        public void eliminar(int orderId)
+        {
+            orders order = context.orders.FirstOrDefault(x => x.id == orderId);
+            if (order != null)
+            {
+                order.state = false;
+                context.SaveChanges();
+            }
+        }
+
         public List<orden> getOrders(int idUser)
         {
             List<orden> list = new List<orden>();
@@ -45,6 +66,16 @@ namespace Application.Service.Services
                 }
             });
             return list;
+        }
+
+        public List<productDetail> getProductDetailsByOrderDrinks(int idBar)
+        {
+            return getProductDetailsByOrder(idBar).Where(x => x.productTypeId == CONSTANTES.PRODUCT_TYPE_BEBIDA).ToList();
+        }
+
+        public List<productDetail> getProductDetailsByOrderSnacks(int idBar)
+        {
+            return getProductDetailsByOrder(idBar).Where(x => x.productTypeId == CONSTANTES.PRODUCT_TYPE_PIQUEO).ToList();
         }
 
         public orders postOrder(orders order)

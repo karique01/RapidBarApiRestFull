@@ -13,10 +13,12 @@ namespace Application.Data.DTO
             date = order.date;
             barName = order.products_by_order.FirstOrDefault().products.bars.name;
             id = order.id;
+            state = order.state;
         }
         public int id { get; set; }
         public double totalAmount { get; set; }
         public System.DateTime date { get; set; }
         public string barName { get; set; }
+        public bool state { get; set; }
     }
 }
